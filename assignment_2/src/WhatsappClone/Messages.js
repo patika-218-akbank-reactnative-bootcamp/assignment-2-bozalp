@@ -3,7 +3,7 @@ import { Text, View, TouchableOpacity, StyleSheet, Image } from 'react-native';
 
 const Main = ({ firstName, text, profileImage, }) => {
     return (
-        <TouchableOpacity style={styles.container} activeOpacity={0.7}>
+        <TouchableOpacity style={styles.container} activeOpacity={0.8}>
             <TouchableOpacity>
                 <Image source={{ uri:  profileImage  }} style={styles.profile_image} />
             </TouchableOpacity>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, View, FlatList } from 'react-native';
 
 import Messages from './Messages';
+import Tabs from './Tabs';
 
 const chatList = [
     {
@@ -54,6 +55,7 @@ const chatList = [
 const Whatsapp = () => {
     return (
         <View>
+            <Tabs />
             <FlatList
                 data={chatList}
                 renderItem={({ item }) =>

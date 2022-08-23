@@ -22,10 +22,10 @@ function SplashScreen() {
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{headerShadowVisible:false}}>
         <Stack.Screen name="WhatsApp" component={Whatsapp} 
         options={{
-          headerStyle:{backgroundColor:'#128C7E'},
+          headerStyle:{backgroundColor:'#128C7E',},
           headerTitleStyle:{color:'white'}
         }}/>
       </Stack.Navigator>

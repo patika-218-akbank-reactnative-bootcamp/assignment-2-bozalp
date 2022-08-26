@@ -4,9 +4,10 @@
  */
 
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import Whatsapp from './src/WhatsappClone';
 import MessageArea from './src/WhatsappClone/MessageArea';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -34,12 +35,32 @@ const App = () => {
           options={{
             headerTitle: "NAME",
             headerStyle: { backgroundColor: '#128C7E', },
-            headerTitleStyle: { color: 'white' }
+            headerTitleStyle: { color: 'white' },
+            headerRight: () => (
+              <View style={styles.button_area}>
+                < Icon name='video' size={20} solid color={'#fff'} />
+                < Icon name='phone' size={20} solid color={'#fff'} />
+                < Icon name='list' size={20} color={'#fff'} />
+              </View>
+            )
           }} />
       </Stack.Navigator>
     </NavigationContainer>
 
   )
 }
+
+const styles = StyleSheet.create(
+  {
+    button_area:
+    {
+        width:120,
+        flexDirection:'row',
+        height:50,
+        alignItems:'center',
+        justifyContent:'space-between'
+    }
+  }
+)
 
 export default App;

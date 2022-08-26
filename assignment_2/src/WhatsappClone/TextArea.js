@@ -1,5 +1,7 @@
 import React from 'react';
 import { Text, View, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome5';
+
 
 const TextArea = () => {
     return (
@@ -8,8 +10,9 @@ const TextArea = () => {
                 <TextInput placeholder="Message" style={styles.textbox} />
             </View>
             <View style={{ flex: 1,}}>
+            
                 <TouchableOpacity style={styles.send_button}>
-
+                <Icon name='paper-plane' size={24} solid color={'#128C7E'}/>
                 </TouchableOpacity>
             </View>
         </View>
@@ -42,6 +45,8 @@ const styles = StyleSheet.create(
             height: 48,
             borderRadius: 24,
             backgroundColor: 'white',
+            alignItems:'center',
+            paddingTop:10
         },
     }
 )

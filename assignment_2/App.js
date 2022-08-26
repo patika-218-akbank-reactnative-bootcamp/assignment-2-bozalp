@@ -5,7 +5,9 @@
 
 import React from 'react';
 import { View, Text } from 'react-native';
-import Whatsapp from './src/WhatsappClone/Whatsapp';
+import Whatsapp from './src/WhatsappClone';
+import MessageArea from './src/WhatsappClone/MessageArea';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -22,12 +24,18 @@ function SplashScreen() {
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShadowVisible:false}}>
-        <Stack.Screen name="WhatsApp" component={Whatsapp} 
-        options={{
-          headerStyle:{backgroundColor:'#128C7E',},
-          headerTitleStyle:{color:'white'}
-        }}/>
+      <Stack.Navigator screenOptions={{ headerShadowVisible: false }}>
+        <Stack.Screen name="WhatsApp" component={Whatsapp}
+          options={{
+            headerStyle: { backgroundColor: '#128C7E', },
+            headerTitleStyle: { color: 'white' }
+          }} />
+        <Stack.Screen name="MessageArea" component={MessageArea}
+          options={{
+            headerTitle: "NAME",
+            headerStyle: { backgroundColor: '#128C7E', },
+            headerTitleStyle: { color: 'white' }
+          }} />
       </Stack.Navigator>
     </NavigationContainer>
 

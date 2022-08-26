@@ -47,20 +47,47 @@ const chatList = [
             {
                 text: "Naber cnm",
                 dateTime: "12:14",
+            },
+            {
+                text: "Nerdesin",
+                dateTime: "12:15",
+            },
+            {
+                text: "Naber cnmdd",
+                dateTime: "12:14",
+            },
+            {
+                text: "Nerdesinsdas",
+                dateTime: "12:15",
+            },
+            {
+                text: "Naber cnmaaads",
+                dateTime: "12:14",
+            },
+            {
+                text: "Nerdesinsdas",
+                dateTime: "12:15",
+            },
+            {
+                text: "Naber cdsadnm",
+                dateTime: "12:14",
+            },
+            {
+                text: "Nerdesin",
+                dateTime: "12:15",
             }
         ]
     }
 ]
 
-const Whatsapp = () => {
+const Whatsapp = ({ navigation }) => {
     return (
         <View>
             <Tabs />
             <FlatList
                 data={chatList}
                 renderItem={({ item }) =>
-                    <Messages firstName={item.receiver.firstName} text={item.messages.map(t => t.text)}
-                        profileImage={item.receiver.profileImage} />
+                    <Messages navigation={navigation} receiver={item.receiver} messages={item.messages} />
                 } />
         </View>
     );

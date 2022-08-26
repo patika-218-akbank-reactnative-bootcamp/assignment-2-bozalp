@@ -1,18 +1,28 @@
 import React from 'react';
-import { Text, View, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import { Text, View, TouchableOpacity, StyleSheet, Image, Alert } from 'react-native';
+const Main = ({ navigation, receiver, messages }) => {
 
-const Main = ({ firstName, text, profileImage, }) => {
+    function goToMessage() {
+        //Alert.alert(receiver.firstName.toString());
+        //navigation.navigate('MessageArea', receiver, messages);
+        navigation.navigate('MessageArea', messages);
+    }
+
+    /*const selectedPerson = () => {
+        user = 
+    }*/
+
     return (
         <TouchableOpacity style={styles.container} activeOpacity={0.8}>
             <TouchableOpacity>
-                <Image source={{ uri:  profileImage  }} style={styles.profile_image} />
+                <Image source={{ uri: receiver.profileImage }} style={styles.profile_image} />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.text_area}>
+            <TouchableOpacity style={styles.text_area} onPress={() => goToMessage()}>
                 <Text style={styles.name_text}>
-                    {firstName}
+                    {receiver.firstName}
                 </Text>
                 <Text>
-                   {text}
+                    {messages.map(m => m.text)[0]}
                 </Text>
             </TouchableOpacity>
         </TouchableOpacity>
@@ -38,7 +48,7 @@ const styles = StyleSheet.create(
         {
             width: '100%',
             padding: 12,
-            paddingLeft:3
+            paddingLeft: 3
             // backgroundColor:'red',
         },
         name_text:

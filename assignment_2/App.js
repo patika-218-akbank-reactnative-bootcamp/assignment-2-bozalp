@@ -33,7 +33,6 @@ const App = () => {
           }} />
         <Stack.Screen name="MessageArea" component={MessageArea}
           options={{
-            headerTitle: "NAME",
             headerStyle: { backgroundColor: '#128C7E', },
             headerTitleStyle: { color: 'white' },
             headerRight: () => (
@@ -43,7 +42,7 @@ const App = () => {
                 < Icon name='list' size={20} color={'#fff'} />
               </View>
             )
-          }} />
+  }} />
       </Stack.Navigator>
     </NavigationContainer>
 

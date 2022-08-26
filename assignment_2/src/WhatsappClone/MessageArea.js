@@ -1,23 +1,28 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Alert, Text, View, FlatList, StyleSheet, Image, TextInput } from 'react-native';
 import TextArea from './TextArea';
 
 const MessageArea = ({ navigation, route }) => {
     const messages = route.params;
-    //const {id, firstName, lastName} = route.params;
 
-    /*useState(() => Alert.alert(text),
-        []);*/
+    //gelen verinin mesaj adini alip navigation title esitliyorum.
+    useEffect(() => {
+        navigation.setOptions(
+            {
+                title: route.params[1]
+            }
+        )
+    }, [navigation]);
     return (
         <View style={styles.container}>
             <Image source={require("./img/bg.jpg")} style={styles.background_image} />
 
             <FlatList
-                data={messages}
+                data={messages[0]}
                 ListFooterComponent={<View style={{ marginBottom: 140 }} />}
                 renderItem={({ item }) =>
                     <View style={styles.messsage_box}>
-                        <Text>
+                        <Text style={styles.message_text} >
                             {item.text}
                         </Text>
                         <Text style={styles.time_text} >
@@ -54,6 +59,11 @@ const styles = StyleSheet.create(
             borderRadius: 10,
             width: '80%',
             backgroundColor: '#DCF8C6',
+        },
+        message_text:
+        {
+            fontSize: 16,
+            color: 'black',
         },
         time_text:
         {
